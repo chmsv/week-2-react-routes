@@ -1,24 +1,31 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import Head from './head'
+import React, { useState } from 'react'
+import { history } from '../redux'
 
-const Main = () => {
+const Main = (props) => {
+  const [value, setValue] = useState('')
+  const onChange = (e) => {
+    setValue(e.target.value)
+  }
+
+  const onCLick = () => {
+    history.push(`/${value}`)  
+  }
+
   return (
-    <div>
-      <Head title="Hello" />
-      <div
-        id="title"
-        className="bg-indigo-800 text-white font-bold rounded-lg border shadow-lg p-2"
-      >
-        Main
+      <div className="flex items-center justify-center h-screen">
+        <div className="bg-indigo-800 text-black font-bold rounded-lg border shadow-lg p-10">
+          <input 
+            className="text-black"
+            id="input-field"
+            type="text" 
+            value={value}
+            onChange={onChange}
+          />
+          <button className="m-2" id="search-button" type="button" onClick={onClick}>
+            Send
+          </button>
+        </div>
       </div>
-      <div>
-        <Link to="/dashboard/">Go To Root</Link>
-      </div>
-      <div>
-        <Link to="/dashboard/profile/385666b1-bff5-11e9-95ba-1bf845c18f8d">Go To Profile</Link>{' '}
-      </div>
-    </div>
   )
 }
 
