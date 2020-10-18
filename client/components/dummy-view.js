@@ -15,7 +15,7 @@ const Dummy = () => {
           <Route exact path="/:userName/" component={() => <Repolist />} />
           <Route exact path="/:userName/:repositoryName" component={() => <Text />} />
         </Switch>
-      </div>
+    </div>
   )
 }
 

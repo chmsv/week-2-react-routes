@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import { history } from '../redux'
 
-const Main = (props) => {
+const Main = () => {
   const [value, setValue] = useState('')
   const onChange = (e) => {
     setValue(e.target.value)
   }
 
   const onCLick = () => {
-    history.push(`/${value}`)  
+    history.push(`/${value}`)
   }
 
   return (
