@@ -10,11 +10,11 @@ const Dummy = () => {
   return (
     <div>
       <Head title="Hello" />
-        <Switch>
-          <Route exact path="/" component={() => <Main />} />
-          <Route exact path="/:userName/" component={() => <Repolist />} />
-          <Route exact path="/:userName/:repositoryName" component={() => <Text />} />
-        </Switch>
+      <Switch>
+        <Route exact path="/" component={() => <Main />} />
+        <Route exact path="/:userName/" component={() => <Repolist />} />
+        <Route exact path="/:userName/:repositoryName" component={() => <Text />} />
+      </Switch>
     </div>
   )
 }

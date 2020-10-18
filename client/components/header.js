@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 
-const Header = (props) => {
+const Header = () => {
   const { userName, repositoryName } = useParams()
 
   return (
@@ -10,9 +10,9 @@ const Header = (props) => {
         {userName}
       </div>
       {repositoryName && (
-          <Link id="go-repository-list" to={`/${userName}`}>
-            Go Repository List
-          </Link>
+        <Link id="go-repository-list" to={`/${userName}`}>
+          Go Repository List
+        </Link>
         )}
       <Link id="go-back" to="/">
           Go Back
